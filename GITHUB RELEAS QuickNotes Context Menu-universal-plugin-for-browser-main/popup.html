@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 350px; font-family: 'Segoe UI', sans-serif; padding: 15px; background: #f4f7f6; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    h3 { margin: 0; color: #333; }
+    
+    #notesList { max-height: 350px; overflow-y: auto; margin-bottom: 15px; padding-right: 5px; }
+    
+    .note { 
+      background: white; border-radius: 6px; padding: 10px; margin-bottom: 10px; 
+      position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid #007bff;
+    }
+    .note-text { font-size: 13px; outline: none; padding-right: 25px; min-height: 20px; }
+    .note-date { font-size: 9px; color: #999; margin-top: 5px; display: block; }
+    
+    /* Кнопка удаления (крестик) */
+    .delete-btn {
+      position: absolute; top: 8px; right: 8px; cursor: pointer;
+      color: #ccc; font-weight: bold; font-size: 16px; border: none; background: none;
+    }
+    .delete-btn:hover { color: #dc3545; }
+
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; }
+    button { 
+      flex: 1; padding: 8px 5px; cursor: pointer; border: none; 
+      border-radius: 4px; font-size: 12px; font-weight: 600;
+    }
+    #sortNotes { background: #6c757d; color: white; }
+    #exportNotes { background: #28a745; color: white; }
+    #clearNotes { background: #dc3545; color: white; }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h3>Заметки</h3>
+    <button id="sortNotes" style="flex: none; width: auto;">⇅ Сортировка</button>
+  </div>
+  <div id="notesList"></div>
+  <div class="controls">
+    <button id="exportNotes">💾 .TXT</button>
+    <button id="clearNotes">🗑 Очистить</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
